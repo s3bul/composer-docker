@@ -12,7 +12,8 @@ RUN set -eux; \
     subversion \
     tini \
     unzip \
-    zip
+    zip \
+    libicu-dev
 
 RUN set -eux; \
   apk add --no-cache --virtual .build-deps \
