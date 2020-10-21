@@ -12,13 +12,14 @@ RUN set -eux; \
     subversion \
     tini \
     unzip \
-    zip \
-    libicu-dev
+    zip
 
 RUN set -eux; \
   apk add --no-cache --virtual .build-deps \
     libzip-dev \
     zlib-dev \
+    icu-dev \
+    libpng-dev \
   ; \
   docker-php-ext-install -j "$(nproc)" \
     zip \
