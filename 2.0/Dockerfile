@@ -18,9 +18,12 @@ RUN set -eux; \
   apk add --no-cache --virtual .build-deps \
     libzip-dev \
     zlib-dev \
+    icu-dev \
+    libpng-dev \
   ; \
   docker-php-ext-install -j "$(nproc)" \
     zip \
+    intl gd \
   ; \
   runDeps="$( \
     scanelf --needed --nobanner --format '%n#p' --recursive /usr/local/lib/php/extensions \
